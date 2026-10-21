@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هم‌مسیر · پیش‌نمایش tokens</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../contracts/tokens.css">
+<link rel="stylesheet" href="base.css">
+<style>
+  main { max-width: 960px; }
+  section + section { margin-top: var(--space-12); }
+  .sw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-3); }
+  .sw { background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; }
+  .sw i { display: block; height: 56px; border-bottom: 1px solid var(--line); }
+  .sw div { padding: var(--space-2) var(--space-3); }
+  .sw code { display: block; direction: ltr; text-align: right; color: var(--ink-muted); font-size: var(--caption-size); }
+  .type-row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); padding: var(--space-3) 0; border-top: 1px solid var(--line); }
+  .type-row .caption { color: var(--ink-muted); direction: ltr; flex: none; }
+  .scores { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  .sc { text-align: center; }
+  .sc .gauge { margin: 0 auto var(--space-3); }
+  .btns { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+  .err { border-inline-start: 4px solid var(--danger); background: var(--surface-raised); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
+  .err b { color: var(--danger); }
+  .copy { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .no { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); color: var(--ink-muted); }
+  .yes { background: var(--brand-soft); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
+  @media (max-width: 800px) { .scores, .copy { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in"><a class="wordmark" href="#"><img src="logo/logo-final.png" alt="هم‌مسیر"></a><span class="small muted">پیش‌نمایش برند · از روی برند گاید</span></div></header>
+<main>
+  <section>
+    <h1>رنگ‌ها</h1>
+    <p class="sub">همه از tokens.css می‌آیند.</p>
+    <div class="sw-grid">
+      <div class="sw"><i style="background:var(--brand)"></i><div><span class="strong small">سبز کاج</span><code>brand #0f5c4c</code></div></div>
+      <div class="sw"><i style="background:var(--brand-soft)"></i><div><span class="strong small">سبز ملایم</span><code>brand-soft #dcefe8</code></div></div>
+      <div class="sw"><i style="background:var(--accent)"></i><div><span class="strong small">زعفرانی</span><code>accent #e8a33d</code></div></div>
+      <div class="sw"><i style="background:var(--accent-ink)"></i><div><span class="strong small">متن زعفرانی</span><code>accent-ink #8a5a12</code></div></div>
+      <div class="sw"><i style="background:var(--accent-soft)"></i><div><span class="strong small">زعفرانی ملایم</span><code>accent-soft #fbecd2</code></div></div>
+      <div class="sw"><i style="background:var(--success)"></i><div><span class="strong small">موفقیت</span><code>success #2f7d32</code></div></div>
+      <div class="sw"><i style="background:var(--danger)"></i><div><span class="strong small">هشدار جدی</span><code>danger #b3261e</code></div></div>
+      <div class="sw"><i style="background:var(--surface)"></i><div><span class="strong small">پس‌زمینه</span><code>surface #d6e8b8</code></div></div>
+      <div class="sw"><i style="background:var(--ink)"></i><div><span class="strong small">متن اصلی</span><code>ink #17201d</code></div></div>
+      <div class="sw"><i style="background:var(--ink-muted)"></i><div><span class="strong small">متن ثانویه</span><code>ink-muted #5b6661</code></div></div>
+      <div class="sw"><i style="background:var(--line)"></i><div><span class="strong small">خط</span><code>line #e3ded4</code></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h1>رنگ امتیاز</h1>
+    <p class="sub">۷۵ به بالا سبز، ۵۰ تا ۷۴ زعفرانی، زیر ۵۰ قرمز. همیشه با عدد و برچسب.</p>
+    <div class="scores">
+      <div class="card sc"><div class="gauge" style="--p:82;--c:var(--success)"><div>۸۲٪</div></div><div class="strong label-ok">هم‌خوانی خوب</div><div class="small muted">با اضافه کردن سه مهارت به ۹۰٪ می‌رسی.</div></div>
+      <div class="card sc"><div class="gauge" style="--p:63;--c:var(--accent)"><div style="color:var(--accent-ink)">۶۳٪</div></div><div class="strong label-mid">قابل بهبود</div><div class="small muted">سه مهارت کلیدی آگهی در رزومه‌ات نیامده.</div></div>
+      <div class="card sc"><div class="gauge" style="--p:14;--c:var(--danger)"><div>۱۴٪</div></div><div class="strong label-bad">نیاز به کار جدی</div><div class="small muted">بخش تجربه را با زبان همین آگهی بازنویسی کنیم.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h1>تایپوگرافی</h1>
+    <p class="sub">وزیرمتن. هیچ متنی کوچک‌تر از ۱۲ پیکسل نیست.</p>
+    <div class="card">
+      <div class="type-row"><span style="font-size:var(--display-size);line-height:var(--display-lh);font-weight:var(--display-w)">یک قدم جلوتر</span><span class="caption">display 40/56 · 800</span></div>
+      <div class="type-row"><span style="font-size:var(--score-size);line-height:var(--score-lh);font-weight:var(--score-w)">۸۲٪</span><span class="caption">score 48/52 · 800</span></div>
+      <div class="type-row"><span style="font-size:var(--h1-size);line-height:var(--h1-lh);font-weight:var(--h1-w)">گزارش تطابق رزومه</span><span class="caption">h1 28/42 · 700</span></div>
+      <div class="type-row"><span style="font-size:var(--h2-size);line-height:var(--h2-lh);font-weight:var(--h2-w)">کلیدواژه‌های جاافتاده</span><span class="caption">h2 22/34 · 700</span></div>
+      <div class="type-row"><span style="font-size:var(--h3-size);line-height:var(--h3-lh);font-weight:var(--h3-w)">سؤال ۳ از ۸</span><span class="caption">h3 18/30 · 600</span></div>
+      <div class="type-row"><span>رزومه‌ات با این آگهی ۸۲ درصد هم‌خوان است.</span><span class="caption">body 16/30 · 400</span></div>
+      <div class="type-row"><span class="small">آخرین تحلیل: دیروز</span><span class="caption">small 14/24 · 400</span></div>
+      <div class="type-row"><span class="caption" style="color:var(--ink)">پیشنهادی</span><span class="caption">caption 12/20 · 500</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h1>دکمه‌ها و پیام‌ها</h1>
+    <p class="sub">دکمهٔ اصلی با فعل شروع می‌شود. در هر صفحه فقط یکی.</p>
+    <div class="card stack">
+      <div class="btns"><button class="btn btn-primary">رزومه‌ات را بسنج</button><button class="btn btn-quiet">قبول دارم</button><button class="btn btn-line">نسخهٔ خودم بماند</button></div>
+      <div class="err small"><b>فایل باز نشد.</b> اگر فایل پی‌دی‌اف است، یک بار دیگر بارگذاری کن یا متن رزومه را مستقیم وارد کن.</div>
+      <div class="copy small">
+        <div class="no"><div class="caption">این را ننویس</div>رزومهٔ شما ضعیف است.</div>
+        <div class="yes"><div class="caption" style="color:var(--brand)">این را بنویس</div>رزومه‌ات ۸۵٪ با این آگهی هم‌خوان است. با اضافه کردن سه مهارت زیر می‌تواند بالای ۹۰٪ برود.</div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

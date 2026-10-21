@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هم‌مسیر · گزینه‌های لوگو</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../contracts/tokens.css">
+<link rel="stylesheet" href="../base.css">
+<style>
+  main { max-width: 1000px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  .tile { padding: var(--space-8) var(--space-4); display: grid; place-items: center; min-height: 170px; border-radius: var(--radius-lg); }
+  .light { background: var(--surface-raised); border: 1px solid var(--line); }
+  .dark { background: var(--brand); margin-top: var(--space-3); }
+  .opt { margin-top: var(--space-2); }
+  .opt .small { margin-top: var(--space-1); }
+  .sizes { display: flex; gap: var(--space-4); align-items: center; justify-content: center; padding: var(--space-3); background: var(--surface-raised); border: 1px solid var(--line); border-radius: var(--radius-lg); margin-top: var(--space-3); }
+  .t { font-family: var(--font); font-weight: 800; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <!-- الف: فقط نوشته (نشانهٔ موقت برند گاید) -->
+  <symbol id="lg-a" viewBox="0 0 200 64">
+    <text x="100" y="46" text-anchor="middle" font-family="Vazirmatn" font-weight="800" font-size="44" fill="currentColor">هم‌مسیر</text>
+  </symbol>
+
+  <!-- ب: کمان حلقهٔ امتیاز که نوشته را در بر می‌گیرد -->
+  <symbol id="lg-b" viewBox="0 0 240 104">
+    <path d="M212 84 A92 62 0 0 0 28 84" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="7" stroke-linecap="round"/>
+    <path d="M212 84 A92 62 0 0 0 28 84" fill="none" stroke="var(--arc, var(--accent))" stroke-width="7" stroke-linecap="round" pathLength="100" stroke-dasharray="72 100"/>
+    <text x="120" y="88" text-anchor="middle" font-family="Vazirmatn" font-weight="800" font-size="40" fill="currentColor">هم‌مسیر</text>
+  </symbol>
+
+  <!-- ج: دو کمان هم‌مرکز + نوشته -->
+  <symbol id="mark" viewBox="0 0 48 48">
+    <g transform="translate(48 0) scale(-1 1)">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="5"/>
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="75 100" transform="rotate(-90 24 24)"/>
+      <circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="5"/>
+      <circle cx="24" cy="24" r="10" fill="none" stroke="var(--arc, var(--accent))" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="55 100" transform="rotate(-90 24 24)"/>
+    </g>
+  </symbol>
+</defs></svg>
+
+<main>
+  <h1>سه گزینه برای لوگوی هم‌مسیر</h1>
+  <p class="sub">بر اساس برند گاید: موتیف کمان‌های حلقهٔ امتیاز، فقط دو رنگ هویتی، بدون گرادیان و سایه.</p>
+
+  <div class="grid">
+    <div>
+      <div class="tile light" style="color:var(--brand)"><svg width="200" height="64"><use href="#lg-a"/></svg></div>
+      <div class="tile dark" style="color:var(--on-brand)"><svg width="200" height="64"><use href="#lg-a"/></svg></div>
+      <div class="opt"><div class="strong">الف · فقط نوشته</div><div class="small muted">همان نشانهٔ موقت برند گاید. ساده و بی‌خطا.</div></div>
+    </div>
+    <div>
+      <div class="tile light" style="color:var(--brand)"><svg width="220" height="95"><use href="#lg-b"/></svg></div>
+      <div class="tile dark" style="color:var(--on-brand);--arc:var(--accent)"><svg width="220" height="95"><use href="#lg-b"/></svg></div>
+      <div class="opt"><div class="strong">ب · کمان دور نوشته</div><div class="small muted">همان مفهوم برند گاید: کمانی از حلقهٔ امتیاز که کلمه را در بر می‌گیرد.</div></div>
+    </div>
+    <div>
+      <div class="tile light" style="color:var(--brand);gap:var(--space-3);display:flex;align-items:center;justify-content:center">
+        <svg width="56" height="56"><use href="#mark"/></svg><span class="t" style="font-size:36px">هم‌مسیر</span></div>
+      <div class="tile dark" style="color:var(--on-brand);gap:var(--space-3);display:flex;align-items:center;justify-content:center">
+        <svg width="56" height="56"><use href="#mark"/></svg><span class="t" style="font-size:36px">هم‌مسیر</span></div>
+      <div class="opt"><div class="strong">ج · نشانه + نوشته</div><div class="small muted">دو کمان هم‌مرکز. نشانهٔ جدا برای آیکون و پروفایل شبکه‌ها.</div></div>
+      <div class="sizes" style="color:var(--brand)"><svg width="16" height="16"><use href="#mark"/></svg><svg width="24" height="24"><use href="#mark"/></svg><svg width="32" height="32"><use href="#mark"/></svg><svg width="48" height="48"><use href="#mark"/></svg></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

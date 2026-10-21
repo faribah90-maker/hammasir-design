@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هم‌مسیر · تمرین مصاحبه</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../contracts/tokens.css">
+<link rel="stylesheet" href="../base.css">
+<style>
+  main { max-width: 760px; }
+  .steps { display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-8); flex-wrap: wrap; }
+  .steps button { font-family: inherit; font-size: var(--small-size); border: 1px solid var(--line); background: var(--surface-raised); color: var(--ink-muted); padding: var(--space-2) var(--space-4); border-radius: var(--radius-pill); cursor: pointer; }
+  .steps button.on { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+  .screen { display: none; } .screen.on { display: block; }
+  label { display: block; font-weight: var(--body-strong-w); margin-bottom: var(--space-2); }
+  textarea { width: 100%; min-height: 120px; border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-3); font-family: inherit; font-size: var(--small-size); line-height: var(--small-lh); color: var(--ink); background: var(--surface-raised); resize: vertical; }
+  textarea:focus { outline: 2px solid var(--brand); border-color: transparent; }
+  .from { display: flex; gap: var(--space-2); align-items: center; background: var(--brand-soft); color: var(--brand); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-4); }
+  .meta { display: flex; justify-content: space-between; margin-bottom: var(--space-2); }
+  .chat { display: flex; flex-direction: column; gap: var(--space-3); margin: var(--space-6) 0; }
+  .msg { max-width: 84%; padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); }
+  .msg.ai { background: var(--brand-soft); align-self: flex-start; border-start-start-radius: var(--space-1); }
+  .msg.me { background: var(--brand); color: var(--on-brand); align-self: flex-end; border-start-end-radius: var(--space-1); }
+  .msg .caption { display: block; margin-bottom: var(--space-1); }
+  .msg.ai .caption { color: var(--brand); }
+  .msg.me .caption { opacity: .85; }
+  .reply { display: flex; gap: var(--space-3); align-items: flex-end; }
+  .reply textarea { min-height: 72px; }
+  .hint { color: var(--ink-muted); margin-top: var(--space-2); }
+  .report-top { display: flex; align-items: center; gap: var(--space-6); }
+  .next { background: var(--accent-soft); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-top: var(--space-4); }
+  .next b { color: var(--accent-ink); }
+  .good { background: var(--brand-soft); border-radius: var(--radius-lg); padding: var(--space-6); }
+  .good h2 { color: var(--success); }
+  .fix { background: var(--accent-soft); border-radius: var(--radius-lg); padding: var(--space-6); }
+  .fix h2 { color: var(--accent-ink); }
+  ul { margin: 0; padding-inline-start: var(--space-6); }
+  .qa-head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); margin-bottom: var(--space-3); }
+  .qa-head h3 { margin: 0; }
+  .score-tag { text-align: center; flex: none; }
+  .block { padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); margin-top: var(--space-2); }
+  .mine { background: var(--surface); border: 1px solid var(--line); }
+  .better { background: var(--brand-soft); }
+  .block .caption { display: block; margin-bottom: var(--space-1); }
+  @media (max-width: 800px) { .msg { max-width: 94%; } .report-top { flex-direction: column; text-align: center; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></symbol>
+</defs></svg>
+
+<header class="top"><div class="top-in">
+  <a class="wordmark" href="#"><img src="../logo/logo-final.png" alt="هم‌مسیر"></a>
+  <nav><a href="#">تطبیق رزومه</a><a class="on" href="#">تمرین مصاحبه</a></nav>
+</div></header>
+
+<main>
+  <div class="steps">
+    <button class="on" onclick="go(0,this)">۱ · شروع</button>
+    <button onclick="go(1,this)">۲ · مصاحبه</button>
+    <button onclick="go(2,this)">۳ · گزارش</button>
+  </div>
+
+  <!-- ۱ شروع -->
+  <div class="screen on" id="s0">
+    <h1>قبل از مصاحبهٔ واقعی، تمرین واقعی</h1>
+    <p class="sub">چند سؤال مثل یک مصاحبهٔ واقعی می‌پرسیم و آخرش بازخورد دقیق می‌گیری.</p>
+    <div class="card">
+      <div class="from small"><svg class="ic"><use href="#i-link"/></svg><span>آگهی و رزومه از تحلیل قبلی‌ات آمده: «کارشناس عملیات»</span></div>
+      <label for="jd">یا آگهی دیگری بگذار</label>
+      <textarea id="jd" placeholder="متن آگهی را اینجا بگذار."></textarea>
+      <p class="small muted" style="margin:var(--space-3) 0 var(--space-4)">حدود ۸ سؤال می‌پرسیم و کمتر از ۱۵ دقیقه طول می‌کشد.</p>
+      <button class="btn btn-primary btn-block" onclick="go(1,document.querySelectorAll('.steps button')[1])">مصاحبه را شروع کن</button>
+    </div>
+  </div>
+
+  <!-- ۲ مصاحبه -->
+  <div class="screen" id="s1">
+    <div class="meta small muted"><span>سؤال ۳ از ۸</span><span>سؤال رفتاری</span></div>
+    <div class="progress"><i style="width:37.5%"></i></div>
+    <div class="chat">
+      <div class="msg ai"><span class="caption">مصاحبه‌گر</span>یک بار را تعریف کن که پروژه‌ای از برنامه عقب افتاد. چه کار کردی؟</div>
+      <div class="msg me"><span class="caption">تو</span>سعی کردم تیم را بیشتر تحت فشار بگذارم تا زودتر تمام شود.</div>
+      <div class="msg ai"><span class="caption">سؤال پیگیری</span>علت اصلی تأخیر چه بود؟ و بعد از فشار بیشتر، چه اتفاقی افتاد؟</div>
+    </div>
+    <div class="card">
+      <div class="reply">
+        <textarea placeholder="جوابت را اینجا بنویس."></textarea>
+        <button class="btn btn-primary">بفرست</button>
+      </div>
+      <div class="hint small">جواب خوب سه بخش دارد: موقعیت، کاری که کردی، نتیجه.</div>
+    </div>
+  </div>
+
+  <!-- ۳ گزارش -->
+  <div class="screen" id="s2">
+    <div class="card">
+      <div class="report-top">
+        <div class="gauge" style="--p:68;--c:var(--accent)"><div style="color:var(--accent-ink)">۶۸</div></div>
+        <div>
+          <h1 class="label-mid" style="font-size:var(--h2-size);line-height:var(--h2-lh)">قابل بهبود</h1>
+          <div class="small muted">پایه‌ات محکم است. جواب‌هایت منظم بود، فقط مثال‌ها کم بودند.</div>
+        </div>
+      </div>
+      <div class="next"><b>قدم بعدی:</b> برای هر جواب یک مثال واقعی از کارهای خودت آماده کن، و نتیجه را بگو.</div>
+    </div>
+
+    <div class="stack" style="margin-top:var(--space-4)">
+      <div class="good"><h2>نقطه‌های قوت</h2><ul class="small"><li>جواب‌هایت منظم و روشن بود.</li><li>تجربهٔ کاری‌ات را خوب به آگهی وصل کردی.</li></ul></div>
+      <div class="fix"><h2>جاهایی که می‌توانی بهتر کنی</h2><ul class="small"><li>در سؤال‌های رفتاری مثال مشخص نزدی.</li><li>نتیجهٔ کارهایت را نگفتی.</li></ul></div>
+
+      <div class="card">
+        <div class="qa-head">
+          <h3>سؤال ۳: پروژه‌ای که عقب افتاد</h3>
+          <div class="score-tag"><div class="strong label-bad" style="font-size:var(--h2-size);line-height:var(--h2-lh)">۴۲</div><div class="caption label-bad">نیاز به کار جدی</div></div>
+        </div>
+        <div class="block mine"><span class="caption muted">جواب تو</span>سعی کردم تیم را بیشتر تحت فشار بگذارم تا زودتر تمام شود.</div>
+        <p class="small" style="margin:var(--space-3) 0 0"><b class="label-ok">خوب بود:</b> رک گفتی که مسئولیت با تو بود.<br><b class="label-mid">بهتر می‌شد:</b> علت تأخیر و نتیجهٔ کارت را نگفتی.</p>
+        <div class="block better"><span class="caption" style="color:var(--brand)">نسخهٔ پیشنهادی</span>اول علت تأخیر را پیدا کردم و کارها را دوباره اولویت‌بندی کردم. بعد با مدیر، زمان‌بندی تازه را هماهنگ کردم و پروژه را تحویل دادیم. <span class="muted">(مثال خودت را جایگزین کن.)</span></div>
+      </div>
+
+      <div class="card">
+        <div class="qa-head">
+          <h3>سؤال ۱: خودت را معرفی کن</h3>
+          <div class="score-tag"><div class="strong label-ok" style="font-size:var(--h2-size);line-height:var(--h2-lh)">۸۰</div><div class="caption label-ok">هم‌خوانی خوب</div></div>
+        </div>
+        <div class="block mine"><span class="caption muted">جواب تو</span>سه سال در بخش عملیات کار کردم و هماهنگی تیم با من بود.</div>
+        <p class="small" style="margin:var(--space-3) 0 0"><b class="label-ok">خوب بود:</b> کوتاه و مرتبط با آگهی بود.</p>
+      </div>
+
+      <button class="btn btn-primary btn-block">یک مصاحبهٔ دیگر را شروع کن</button>
+    </div>
+  </div>
+</main>
+<script>
+function go(i){
+  document.querySelectorAll('.screen').forEach((s,k)=>s.classList.toggle('on',k===i));
+  document.querySelectorAll('.steps button').forEach((b,k)=>b.classList.toggle('on',k===i));
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>

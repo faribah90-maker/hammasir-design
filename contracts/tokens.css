@@ -1,0 +1,52 @@
+/* هم‌مسیر — tokens.css
+   منبع: برند گاید هم‌مسیر (پیش‌نویس سوم). هیچ مقدار رنگ یا اندازه‌ای بیرون از این فایل نوشته نشود. */
+:root {
+  /* رنگ‌ها */
+  --brand: #0f5c4c;           /* سبز کاج: دکمهٔ اصلی، لینک، حالت فعال */
+  --on-brand: #ffffff;        /* متن روی رنگ اصلی */
+  --brand-soft: #dcefe8;      /* زمینهٔ ملایم برند */
+  --accent: #e8a33d;          /* زعفرانی: حلقهٔ امتیاز، نوار پیشرفت */
+  --accent-ink: #8a5a12;      /* متن زعفرانی (خود accent هیچ‌وقت متن نمی‌شود) */
+  --accent-soft: #fbecd2;     /* زمینهٔ نکته و پیشنهاد بهبود */
+  --success: #2f7d32;         /* امتیاز بالا، نقطهٔ قوت */
+  --danger: #b3261e;          /* امتیاز پایین، خطا */
+  --surface: #d6e8b8;         /* پس‌زمینهٔ صفحه */
+  --surface-raised: #ffffff;  /* کارت */
+  --ink: #17201d;             /* متن اصلی */
+  --ink-muted: #5b6661;       /* متن ثانویه */
+  --line: #e3ded4;            /* جداکننده و حاشیه */
+
+  /* تایپوگرافی */
+  --font: "Vazirmatn", Tahoma, sans-serif;
+  --display-size: 40px;  --display-lh: 56px;  --display-w: 800;
+  --score-size: 48px;    --score-lh: 52px;    --score-w: 800;
+  --h1-size: 28px;       --h1-lh: 42px;       --h1-w: 700;
+  --h2-size: 22px;       --h2-lh: 34px;       --h2-w: 700;
+  --h3-size: 18px;       --h3-lh: 30px;       --h3-w: 600;
+  --body-size: 16px;     --body-lh: 30px;     --body-w: 400;
+  --body-strong-w: 600;
+  --small-size: 14px;    --small-lh: 24px;    --small-w: 400;
+  --caption-size: 12px;  --caption-lh: 20px;  --caption-w: 500;
+
+  /* فاصله (مضرب ۴) */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px;  --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px;
+
+  /* گوشه‌ها */
+  --radius-md: 10px;    /* دکمه */
+  --radius-lg: 16px;    /* کارت */
+  --radius-pill: 999px; /* چیپ و نوار پیشرفت */
+}
+
+html { direction: rtl; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--body-size);
+  line-height: var(--body-lh);
+  font-weight: var(--body-w);
+  color: var(--ink);
+  background: var(--surface);
+}
+* { box-sizing: border-box; }
+em, i { font-style: normal; } /* فارسی ایتالیک نمی‌شود */

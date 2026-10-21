@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هم‌مسیر · تطبیق رزومه</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../contracts/tokens.css">
+<link rel="stylesheet" href="../base.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: var(--space-6); align-items: start; }
+  textarea { width: 100%; min-height: 160px; border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-3); font-family: inherit; font-size: var(--small-size); line-height: var(--small-lh); color: var(--ink); background: var(--surface-raised); resize: vertical; }
+  textarea:focus { outline: 2px solid var(--brand); border-color: transparent; }
+  label { display: block; font-weight: var(--body-strong-w); margin-bottom: var(--space-2); }
+  .drop { border: 2px dashed var(--line); border-radius: var(--radius-md); padding: var(--space-6) var(--space-4); text-align: center; background: var(--surface); color: var(--ink-muted); }
+  .drop .ic { width: 32px; height: 32px; color: var(--brand); margin-bottom: var(--space-2); }
+  .privacy { display: flex; gap: var(--space-2); align-items: flex-start; margin-top: var(--space-3); color: var(--ink-muted); }
+  .privacy .ic { width: 16px; height: 16px; margin-top: 4px; }
+  .hero { display: flex; align-items: center; gap: var(--space-6); }
+  .next { background: var(--accent-soft); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-top: var(--space-3); color: var(--ink); }
+  .next b { color: var(--accent-ink); }
+  .row { display: grid; grid-template-columns: 96px 1fr 40px; gap: var(--space-3); align-items: center; }
+  .row + .row { margin-top: var(--space-3); }
+  .why { grid-column: 1 / -1; color: var(--ink-muted); margin-top: calc(var(--space-2) * -1); }
+  .kw { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-2) 0; border-top: 1px solid var(--line); }
+  .kw:first-of-type { border-top: 0; }
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .cmp > div { padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); }
+  .orig { background: var(--surface); border: 1px solid var(--line); }
+  .sugg { background: var(--brand-soft); }
+  .cmp .caption { display: block; margin-bottom: var(--space-1); }
+  .acts { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+  .letter textarea { min-height: 170px; }
+  .head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+  .head h2, .head h3 { margin: 0; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .cmp { grid-template-columns: 1fr; } .hero { flex-direction: column; text-align: center; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 9l5 -5l5 5" /><path d="M12 4l0 12" /></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" /><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M8 11v-4a4 4 0 1 1 8 0v4" /></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></symbol>
+</defs></svg>
+
+<header class="top"><div class="top-in">
+  <a class="wordmark" href="#"><img src="../logo/logo-final.png" alt="هم‌مسیر"></a>
+  <nav><a class="on" href="#">تطبیق رزومه</a><a href="#">تمرین مصاحبه</a></nav>
+</div></header>
+
+<main>
+  <h1>رزومه‌ات با این آگهی چقدر هم‌خوان است؟</h1>
+  <p class="sub">رزومه و آگهی را بگذار. می‌گوییم چه چیزی کم دارد و چرا.</p>
+
+  <div class="grid">
+    <!-- ورودی: ستون راست -->
+    <section class="stack">
+      <div class="card">
+        <label>رزومه‌ات</label>
+        <div class="drop">
+          <svg class="ic"><use href="#i-up"/></svg>
+          <div class="strong" style="color:var(--ink)">فایل را اینجا بینداز یا انتخاب کن</div>
+          <div class="small">پی‌دی‌اف یا متن، حداکثر ۵ مگابایت</div>
+        </div>
+        <div class="privacy small"><svg class="ic"><use href="#i-lock"/></svg><span>رزومه‌ات فقط برای خودت دیده می‌شود و هر وقت بخواهی کامل پاک می‌شود.</span></div>
+      </div>
+      <div class="card">
+        <label for="jd">متن آگهی</label>
+        <textarea id="jd" placeholder="متن آگهی را از سایت کپی کن و اینجا بگذار."></textarea>
+        <button class="btn btn-quiet btn-block" style="margin-top:var(--space-4)">دوباره بسنج</button>
+      </div>
+    </section>
+
+    <!-- نتیجه: ستون چپ -->
+    <section class="stack">
+      <div class="card">
+        <div class="hero">
+          <div class="gauge" style="--p:82;--c:var(--success)"><div>۸۲٪</div></div>
+          <div>
+            <h2 class="label-ok" style="margin-bottom:0">هم‌خوانی خوب</h2>
+            <div class="small muted">۱۴ مهارت از ۱۷ مهارت مهم آگهی در رزومه‌ات آمده.</div>
+          </div>
+        </div>
+        <div class="next"><b>قدم بعدی:</b> سه مهارت کلیدی آگهی را به رزومه‌ات اضافه کن. با این کار به بالای ۹۰٪ می‌رسی.</div>
+      </div>
+
+      <div class="card">
+        <h2>امتیاز به تفکیک</h2>
+        <div class="row"><span class="strong">مهارت‌ها</span><div class="progress"><i style="width:90%;background:var(--success)"></i></div><span class="strong label-ok">۹۰</span>
+          <div class="why small">۹ مهارت از ۱۰ مهارت اصلی آگهی را داری.</div></div>
+        <div class="row"><span class="strong">تجربه</span><div class="progress"><i style="width:78%;background:var(--success)"></i></div><span class="strong label-ok">۷۸</span>
+          <div class="why small">سابقهٔ کارت به سطح آگهی نزدیک است، ولی نتیجهٔ کارها کم‌رنگ است.</div></div>
+        <div class="row"><span class="strong">تحصیلات</span><div class="progress"><i style="width:100%;background:var(--success)"></i></div><span class="strong label-ok">۱۰۰</span>
+          <div class="why small">مدرکت با شرط آگهی برابر است.</div></div>
+        <div class="row"><span class="strong">کلیدواژه‌ها</span><div class="progress"><i style="width:63%;background:var(--accent)"></i></div><span class="strong label-mid">۶۳</span>
+          <div class="why small">سه کلیدواژهٔ پرتکرار آگهی در رزومه‌ات نیست.</div></div>
+      </div>
+
+      <div class="card">
+        <h2>کلیدواژه‌های جاافتاده</h2>
+        <div class="kw"><span class="strong">مدیریت پروژه</span><span class="chip high">اولویت بالا</span></div>
+        <div class="kw"><span class="strong">تحلیل داده</span><span class="chip high">اولویت بالا</span></div>
+        <div class="kw"><span class="strong">روش چابک</span><span class="chip mid">اولویت متوسط</span></div>
+        <div class="kw"><span class="strong">ارائه به مدیران</span><span class="chip low">اولویت پایین</span></div>
+        <p class="small muted" style="margin:var(--space-3) 0 0">اگر این مهارت‌ها را واقعاً داری، به رزومه‌ات اضافه کن. اگر نداری، چیزی ننویس.</p>
+      </div>
+
+      <div class="card">
+        <h2>بازنویسی پیشنهادی</h2>
+        <div class="cmp">
+          <div class="orig"><span class="caption muted">نسخهٔ تو</span>مسئول هماهنگی کارهای تیم بودم.</div>
+          <div class="sugg"><span class="caption" style="color:var(--brand)">نسخهٔ پیشنهادی</span>هماهنگی کارهای تیم و پیگیری روزانهٔ پیشرفت پروژه‌ها را بر عهده داشتم.</div>
+        </div>
+        <p class="small muted" style="margin:var(--space-3) 0 0">چرا: فعل‌های «هماهنگی» و «پیگیری» دقیقاً همان کلمه‌های آگهی‌اند. چیزی به سابقه‌ات اضافه نشده.</p>
+        <div class="acts"><button class="btn btn-quiet"><svg class="ic"><use href="#i-check"/></svg>قبول دارم</button><button class="btn btn-line">نسخهٔ خودم بماند</button></div>
+      </div>
+
+      <div class="card letter">
+        <div class="head"><h2>نامهٔ همراه رزومه</h2><button class="btn btn-quiet"><svg class="ic"><use href="#i-copy"/></svg>کپی</button></div>
+        <textarea>سلام،
+برای موقعیت «کارشناس عملیات» در شرکت شما درخواست می‌دهم. سه سال هماهنگی تیم و پیگیری پروژه‌ها را تجربه کرده‌ام و فکر می‌کنم این تجربه با نیاز آگهی شما هم‌خوان است…</textarea>
+        <p class="small muted" style="margin:var(--space-2) 0 0">این نامه فقط برای همین آگهی نوشته شده. هر چه خواستی در آن عوض کن.</p>
+      </div>
+
+      <button class="btn btn-primary btn-block"><svg class="ic"><use href="#i-down"/></svg>رزومهٔ بهینه‌شده را دانلود کن</button>
+      <div class="small muted" style="text-align:center">فقط تغییرهایی که تأیید کرده‌ای در فایل می‌آید.</div>
+    </section>
+  </div>
+</main>
+</body>
+</html>
