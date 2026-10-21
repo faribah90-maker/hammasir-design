@@ -2,6 +2,8 @@
 
 ماکاپ‌ها، لوگو و رنگ‌های برند.
 
+آدرس: https://github.com/faribah90-maker/hammasir-design
+
 - `index.html` — نسخهٔ یک‌فایلی؛ با Chrome باز کنید
 - `pdf/` — هر فایل پروژه به‌صورت PDF
 - `02-design/` — لوگو، ماکاپ‌ها، پیش‌نمایش برند
